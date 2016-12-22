@@ -50,68 +50,9 @@ but they have a number of common properties:
 
 =end DESCRIPTION
 
-subset MyDateish of Dateish where
-{
-    .year >= 0 or warn "Licensing year Dateish value must be *.year >= 0"
-};
-
-subset YearRange of Range where {
-    .is-int and all(.int-bounds) >= 0 or
-        warn "Licensing YearRange both endpoints must be Int values and have bounds 0.." ;
-};
-
-subset Year where UInt | MyDateish | YearRange;
-class Holder {
-    has Str $.name;
-    has Year $.year = DateTime.new(time).year;
-
-    method new(Str:D $name) {
-        self.bless(:$name);
-    }
-}
-
-role Abstract {
-
-    has Str $.works-name = 'This program';
-    has Str $.copyright = "Copyright ⓒ";
-    has Holder @.holders;
-
-    multi method copyright-note returns Str
-    {
-        die "No @.holders set" if !@.holders;
-        return $.copyright «~» @.holders».name ==> join "\n:" ;
-    }
-
-    multi method copyright-note(Holder $holder) returns Str {
-        my Str $copyright = $.copyright;
-        my $year;
-        given $holder.year {
-            when Dateish { $year = self.dateish-to-str($_) }
-            when Range { $year = self.range-to-str($_) }
-            default { $year = $_ }
-        }
-
-        $copyright ~= ' ' ~ $year ~ " " ~ $holder.name;
-        return $copyright;
-    }
-
-    multi method copyright-note(Str $holder) returns Str {
-        return self.copyright-note(Holder.new($holder))
-    }
-
-    method range-to-str(Range $range) returns Str:D { $range.gist.trans('.' => '-', :squash) }
-
-    method dateish-to-str(Dateish $date) returns Str:D { $date.year.Str }
-
-    method aliases returns Array[Str]  { Array[Str].new($.short-name) }
-    method files returns Hash:D { … }
-    method header returns Str:D  { … }
-    method full-text returns Str:D  { … }
-    method name returns Str { … }
-    method note returns Str:D  { … }
-    method short-name returns Str  { … }
-    method url returns Str:D  { … }
-
+our sub get('gplv3') {
+    use License::Software::GPLv3;
+    return License::Software::GPLv3;
 }
 
 

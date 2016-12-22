@@ -1,7 +1,7 @@
 NAME
 ====
 
-License::Software - package for generating licenses from templates
+License::Software - Automation interface for applying licenses to software projects.
 
 SYNOPSIS
 ========
@@ -17,7 +17,7 @@ SYNOPSIS
             has %.full-text = 'My license text';
 
             method header() { return "My Header"};
-            method note() { 
+            method note() {
             q:to<END>;
             This software is licensed under MyLicense version 3.0
             END
