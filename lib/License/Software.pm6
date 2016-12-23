@@ -56,9 +56,13 @@ our sub get(Str:D $name) {
             use License::Software::GPLv3;
             return License::Software::GPLv3;
         }
-        when "apache2"|"apache" { 
+        when "apache2"|"apache" {
             use License::Software::Apache2;
             return License::Software::Apache2;
+        }
+        when "agpl"|"agplv3" {
+            use License::Software::AGPLv3;
+            return License::Software::AGPLv3;
         }
 
         default { die "No license $name" }
