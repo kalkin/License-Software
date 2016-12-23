@@ -12,8 +12,15 @@ multi method new(Str:D $name,
     self.bless(:@holders);
 }
 
-multi method new(|h) {
-    my @holders = h.pairs.map: { 
+multi method new(Str:D $works-name, %h) {
+    my @holders = %h.pairs.map: { 
+        License::Software::Holder.new: :name(.key), :year(.value)
+    };
+    self.bless(:$works-name, :@holders);
+}
+
+multi method new(%h) {
+    my @holders = %h.pairs.map: { 
         License::Software::Holder.new: :name(.key), :year(.value)
     };
     self.bless(:@holders);
