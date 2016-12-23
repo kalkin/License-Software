@@ -3,7 +3,7 @@ use License::Software::GPLv3;
 
 unit class License::Software::LGPLv3 is License::Software::GPLv3;
 
-has Str $.url = <https://www.gnu.org/licenses/lgpl-3.0.txt>;
+submethod url { <https://www.gnu.org/licenses/lgpl-3.0.txt> }
 has Str $.name = 'The GNU Lesser General Public License, Version 3, 29 June 2007';
 has Str $.short-name = <LGPLv3>;
 submethod aliases { <LGPLv3>, <LGPL3>, <LGPL> };

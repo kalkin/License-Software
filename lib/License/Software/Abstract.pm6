@@ -59,5 +59,5 @@ method full-text returns Str:D  { … }
 method name returns Str { … }
 method note returns Str:D  { … }
 method short-name returns Str  { … }
-method url returns Str:D  { … }
+submethod url returns Str:D  { … }
 method copyright returns Str:D { "Copyright ⓒ" }
