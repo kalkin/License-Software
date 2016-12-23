@@ -50,13 +50,20 @@ but they have a number of common properties:
 
 =end DESCRIPTION
 
-our sub get('gplv3') {
-    use License::Software::GPLv3;
-    return License::Software::GPLv3;
+our sub get(Str:D $name) {
+    given $name {
+        when "gplv3" {
+            use License::Software::GPLv3;
+            return License::Software::GPLv3;
+        }
+        when "apache2"|"apache" { 
+            use License::Software::Apache2;
+            return License::Software::Apache2;
+        }
+
+        default { die "No license $name" }
+    }
 }
-
-
-
 
 =COPYRIGHT Copyright ⓒ 2016 Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
 

@@ -10,6 +10,7 @@
   "provides" : {
     "License::Software" : "lib/License/Software.pm6",
     "License::Software::Abstract" : "lib/License/Software/Abstract.pm6",
+    "License::Software::Apache2" : "lib/License/Software/Apache2.pm6",
     "License::Software::GPLv3" : "lib/License/Software/GPLv3.pm6",
     "License::Software::Holder" : "lib/License/Software/Holder.pm6",
     "License::Software::Year" : "lib/License/Software/Year.pm6"
