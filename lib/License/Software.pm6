@@ -64,7 +64,14 @@ our sub get(Str:D $name) {
             use License::Software::AGPLv3;
             return License::Software::AGPLv3;
         }
-
+        when "lgpl"|"lgplv3" {
+            use License::Software::LGPLv3;
+            return License::Software::LGPLv3;
+        }
+        when "artistic" {
+            use License::Software::Artistic2;
+            return License::Software::Artistic2;
+        }
         default { die "No license $name" }
     }
 }
