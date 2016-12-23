@@ -3,7 +3,6 @@ use License::Software::Year;
 unit role License::Software::Abstract;
 
 has Str $.works-name = 'This program';
-has Str $.copyright = "Copyright ⓒ";
 has  @.holders = Array.new;
 
 multi method new(Str:D $name, 
@@ -61,3 +60,4 @@ method name returns Str { … }
 method note returns Str:D  { … }
 method short-name returns Str  { … }
 method url returns Str:D  { … }
+method copyright returns Str:D { "Copyright ⓒ" }
