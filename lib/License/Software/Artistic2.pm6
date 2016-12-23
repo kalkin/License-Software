@@ -207,7 +207,7 @@ DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE, EVEN IF
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.};
 
 has Str $.short-name = <Artistic2>;
-has Str @.aliases = <Artistic2>,;
+submethod aliases { <Artistic>, <Artistic2> };
 has Str $.name = 'The Artistic License 2.0 (GPL Compatible)';
 has Str $.url = <http://www.perlfoundation.org/artistic_license_2_0>;
 has %.files = 'LICENSE' => $!full-text;

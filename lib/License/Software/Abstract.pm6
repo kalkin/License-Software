@@ -52,7 +52,7 @@ method range-to-str(Range $range) returns Str:D { $range.gist.trans('.' => '-', 
 
 method dateish-to-str(Dateish $date) returns Str:D { $date.year.Str }
 
-method aliases returns Array[Str]  { … }
+submethod aliases returns Array[Str]  { … }
 method files returns Hash:D { … }
 method header returns Str:D  { … }
 method full-text returns Str:D  { … }

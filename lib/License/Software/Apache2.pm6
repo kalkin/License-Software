@@ -6,7 +6,7 @@ unit class License::Software::Apache2 does License::Software::Abstract;
 method copyright { "Copyright" }
 has Str $.name = 'Apache License, Version 2.0, January 2004';
 has Str $.short-name = <Apache2>;
-has @.aliases = <Apache Apache2>;
+submethod aliases { <Apache2>, <Apache> };
 has Str $.url = <http://www.apache.org/licenses/LICENSE-2.0>;
 has Str $.note = 'Please see the file called LICENSE.';
 has Str $.full-text = q:to/END/,

@@ -1,6 +1,12 @@
 =NAME License::Software - Automation interface for applying licenses to software projects.
 
 unit module License::Software;
+use License::Software::GPLv3;
+use License::Software::Apache2;
+use License::Software::AGPLv3;
+use License::Software::LGPLv3;
+use License::Software::Artistic2;
+
 
 =begin SYNOPSIS
 =begin code
@@ -51,25 +57,20 @@ but they have a number of common properties:
 =end DESCRIPTION
 
 our sub get(Str:D $name) {
-    given $name {
-        when "gplv3" {
-            use License::Software::GPLv3;
+    given $name.uc {
+        when any License::Software::GPLv3.aliases».uc {
             return License::Software::GPLv3;
         }
-        when "apache2"|"apache" {
-            use License::Software::Apache2;
+        when any License::Software::Apache2.aliases».uc {
             return License::Software::Apache2;
         }
-        when "agpl"|"agplv3" {
-            use License::Software::AGPLv3;
+        when any License::Software::AGPLv3.aliases».uc {
             return License::Software::AGPLv3;
         }
-        when "lgpl"|"lgplv3" {
-            use License::Software::LGPLv3;
+        when any License::Software::LGPLv3.aliases».uc {
             return License::Software::LGPLv3;
         }
-        when "artistic" {
-            use License::Software::Artistic2;
+        when any License::Software::Artistic2.aliases».uc {
             return License::Software::Artistic2;
         }
         default { die "No license $name" }

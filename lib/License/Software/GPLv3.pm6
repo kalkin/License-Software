@@ -685,7 +685,7 @@ Public License instead of this License.  But first, please read
 has Str $.short-name = <GPLv3>;
 has Str $.name = 'The GNU General Public License, Version 3, 29 June 2007';
 has Str $.url = <https://www.gnu.org/licenses/gpl-3.0.txt>;
-has Str @.aliases = $!short-name, <GPL3>;
+submethod aliases { <GPLv3>, <GPL3>, <GPL> };
 has %.files = 'COPYING' => $!full-text;
 
 method note() returns Str:D {

@@ -670,7 +670,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 has Str $.short-name = <AGPLv3>;
 has Str $.name = 'The GNU Affero General Public License, Version 3, 29 June 2007';
 has Str $.url = <https://www.gnu.org/licenses/agpl-3.0.txt>;
-has Str @.aliases = $!short-name, <AGPL3>;
+submethod aliases { <AGPLv3>, <AGPL3>, <AGPL> };
 has %.files = 'COPYING' => $!full-text;
 
 method header returns Str:D {
