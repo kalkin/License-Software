@@ -16,6 +16,8 @@ SYNOPSIS
         say $license.short-name;    # Short name like 'GPLv3'
         say $license.alias;         # List of license alias
         say $license.url;           # License url
+        say $license.header;        # License header
+        ⋮                           # ⋮
 
 
     =output The GNU General Public License, Version 3, 29 June 2007
