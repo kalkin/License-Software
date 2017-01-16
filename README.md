@@ -3,7 +3,7 @@
 NAME
 ====
 
-License::Software - Interface for applying licenses to software projects.
+License::Software - provides templated software licenses
 
 SYNOPSIS
 ========
@@ -25,9 +25,9 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-Applying a license to your software is not an easy task. Different licenses dictate different usage rules. A prime example of a “complicated” license is the GNU General Public License ([https://www.gnu.org/licenses/gpl.txt](https://www.gnu.org/licenses/gpl.txt)) and the GNU Lesser General Public License ([https://www.gnu.org/licenses/lgpl.txt](https://www.gnu.org/licenses/lgpl.txt)).
+Applying a license to your software is not an easy task. Different licenses dictate different usage and formatting rules. A prime example of a “complicated” license is the GNU General Public License ([https://www.gnu.org/licenses/gpl.txt](https://www.gnu.org/licenses/gpl.txt)) and the GNU Lesser General Public License ([https://www.gnu.org/licenses/lgpl.txt](https://www.gnu.org/licenses/lgpl.txt)).
 
-The [License::Software::Abstract](License::Software::Abstract) role provides a common interface for querying the software license templates for data. Software licenses and their usage practices differ greatly, but they have a number of common properties:
+The [License::Software](License::Software) provides a common interface for querying the software license templates for data. Software licenses and their usage practices differ greatly, but they have a number of common properties:
 
   * One or multiple copyright holders (authors).
 
@@ -40,6 +40,20 @@ The [License::Software::Abstract](License::Software::Abstract) role provides a c
   * Header to be added at the beginning of each licensed file
 
   * Minor things, like url, short-name, name aliases or how dates are formatted
+
+Currently this module provides the following licenses:
+
+  * AGPLv3.pm6
+
+  * Apache2.pm6
+
+  * Artistic2.pm6
+
+  * GPLv3.pm6
+
+  * LGPLv3.pm6
+
+If your favorite license is missing please do a pull request.
 
 USAGE
 =====
@@ -138,7 +152,7 @@ Returns the license url.
 COPYRIGHT
 =========
 
-Copyright ⓒ 2016 Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
+Copyright © 2016 Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
 
 LICENSE
 =======

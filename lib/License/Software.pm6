@@ -1,4 +1,4 @@
-=NAME License::Software - Interface for applying licenses to software projects.
+=NAME License::Software - provides templated software licenses
 
 unit module License::Software;
 use License::Software::Abstract;
@@ -31,13 +31,14 @@ use License::Software::Artistic2;
 =begin DESCRIPTION
 
 Applying a license to your software is not an easy task. Different licenses
-dictate different usage rules. A prime example of a “complicated” license is the
-GNU General Public License (L<https://www.gnu.org/licenses/gpl.txt>) and the GNU
-Lesser General Public License (L<https://www.gnu.org/licenses/lgpl.txt>).
+dictate different usage and formatting rules. A prime example of a “complicated”
+license is the GNU General Public License
+(L<https://www.gnu.org/licenses/gpl.txt>) and the GNU Lesser General Public
+License (L<https://www.gnu.org/licenses/lgpl.txt>).
 
-The L<License::Software::Abstract> role provides a common interface for querying
-the software license templates for data. Software licenses and their usage
-practices differ greatly, but they have a number of common properties:
+The L<License::Software> provides a common interface for querying the software
+license templates for data. Software licenses and their usage practices differ
+greatly, but they have a number of common properties:
 
 =item One or multiple copyright holders (authors).
 =item Copyright notice per holder
@@ -45,6 +46,17 @@ practices differ greatly, but they have a number of common properties:
 =item Copying permission, stating under which terms the software is distributed
 =item Header to be added at the beginning of each licensed file
 =item Minor things, like url, short-name, name aliases or how dates are formatted
+
+
+Currently this module provides the following licenses:
+
+=item AGPLv3.pm6
+=item Apache2.pm6
+=item Artistic2.pm6
+=item GPLv3.pm6
+=item LGPLv3.pm6
+
+If your favorite license is missing please do a pull request.
 
 =end DESCRIPTION
 
