@@ -5,21 +5,21 @@ unit role License::Software::Abstract;
 has Str $.works-name = 'This program';
 has  @.holders = Array.new;
 
-multi method new(Str:D $name, 
-                 License::Software::Year $year = DateTime.new(time).year) { 
+multi method new(Str:D $name,
+                 License::Software::Year $year = DateTime.new(time).year) {
     my @holders = [License::Software::Holder.new: $name, $year];
     self.bless(:@holders);
 }
 
 multi method new(Str:D $works-name, %h) {
-    my @holders = %h.pairs.map: { 
+    my @holders = %h.pairs.map: {
         License::Software::Holder.new: :name(.key), :year(.value)
     };
     self.bless(:$works-name, :@holders);
 }
 
 multi method new(%h) {
-    my @holders = %h.pairs.map: { 
+    my @holders = %h.pairs.map: {
         License::Software::Holder.new: :name(.key), :year(.value)
     };
     self.bless(:@holders);
@@ -56,8 +56,8 @@ submethod aliases returns Array[Str]  { … }
 method files returns Hash:D { … }
 method header returns Str:D  { … }
 method full-text returns Str:D  { … }
-method name returns Str { … }
+method name returns Str:D { … }
 method note returns Str:D  { … }
-method short-name returns Str  { … }
+method short-name returns Str:D  { … }
 submethod url returns Str:D  { … }
 method copyright returns Str:D { "Copyright ⓒ" }
