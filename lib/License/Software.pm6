@@ -160,7 +160,7 @@ our sub from-url(Str:D $url ) returns License::Software::Abstract
     for get-all() -> $license { return $license if $url ~~ $license.url }
     warn "Can not find license with url '$url'";
 }
-=COPYRIGHT Copyright ⓒ 2016 Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
+=COPYRIGHT Copyright © 2016 Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
 
 =begin LICENSE
 This program is free software: you can redistribute it and/or modify
