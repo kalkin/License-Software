@@ -60,4 +60,4 @@ method name returns Str:D { … }
 method note returns Str:D  { … }
 method short-name returns Str:D  { … }
 submethod url returns Str:D  { … }
-method copyright returns Str:D { "Copyright ©" }
+method copyright returns Str:D { "Copyright © " }
