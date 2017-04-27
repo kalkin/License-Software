@@ -1,5 +1,6 @@
 {
   "name" : "License::Software",
+  "license" : "LGPL-3.0+",
   "source-url" : "https://github.com/kalkin/License-Software.git",
   "support" : {
     "source" : "https://github.com/kalkin/License-Software",
