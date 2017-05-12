@@ -131,6 +131,12 @@ General Public License, Version 3, 29 June 2007”
 
 Returns the short name for a license. I.e. 'GPLv3'.
 
+=head2 method spdx
+
+    method spdx returns Str:D
+
+Returns the license L<https://spdx.org/|SPDX> identifier as C<Str>.
+
 =head2 method note
 
     method note returns Str:D
