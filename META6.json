@@ -27,7 +27,7 @@
     "License::Software::Apache2" : "lib/License/Software/Apache2.pm6"
   },
   "production" : true,
-  "version" : "0.1.0",
+  "version" : "0.1.1",
   "authors" : [
     "Bahtiar `kalkin-` Gadimov",
     ""
