@@ -2,6 +2,7 @@ use v6;
 use Test;
 use License::Software;
 
-pass "replace me";
+my @result = License::Software::get-all;
 
-done-testing;
+plan 1;
+ok @result, "get-all() found Licenses";

@@ -68,17 +68,17 @@ License::Software::get-all
 
 Return all supported licenses.
 
-License::Software::get
-----------------------
+license
+-------
 
-    sub get(Str:D $alias)
+    sub license(Str:D $alias)
 
 Return the software license class for the given alias. I.e alias for the General Public License 3 are 'GPLv3', 'GPL3' & 'GPL'.
 
-License::Software::from-url
----------------------------
+license-from-url
+----------------
 
-    sub from-url(Str:D $url)
+    sub license-from-url(Str:D $url)
 
 Return the software license class for the given url. I.e [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0) is the url for Apache2 license.
 
@@ -172,3 +172,4 @@ This program is free software: you can redistribute it and/or modify it under th
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
 
 You should have received a copy of the GNU Lesser General Public License along with this program. If not, see <http://www.gnu.org/licenses/>.se v6;
+

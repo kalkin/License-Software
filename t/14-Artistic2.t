@@ -4,7 +4,7 @@ use License::Software;
 use License::Software::Abstract;
 
 plan 8;
-ok my License::Software::Abstract $license = License::Software::get(<artistic>).new: "Bahtiar kalkin- Gadimov";
+ok my License::Software::Abstract $license = license(<artistic>).new: "Bahtiar kalkin- Gadimov";
 is $license.short-name(), 'Artistic2', 'Short license name';
 is $license.name(), 'The Artistic License 2.0 (GPL Compatible)', 'Full license name';
 is $license.aliases(), ['Artistic', 'Artistic2', $license.spdx], 'License Aliases';

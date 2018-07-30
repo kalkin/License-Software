@@ -4,7 +4,7 @@ use License::Software;
 use License::Software::Abstract;
 plan 11;
 
-ok my License::Software::Abstract $license = License::Software::get(<agplv3>).new: "Bahtiar kalkin- Gadimov";
+ok my License::Software::Abstract $license = license(<agplv3>).new: "Bahtiar kalkin- Gadimov";
 is $license.short-name(), 'AGPLv3', 'Short license name';
 is $license.name(), 'The GNU Affero General Public License, Version 3, 29 June 2007', 'Full license name';
 is $license.works-name(), 'This program', "Default program name should 'This program'";

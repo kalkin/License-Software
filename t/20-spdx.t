@@ -3,7 +3,12 @@ use Test;
 use License::Software;
 
 my $pair = "Bahtiar `kalkin-` Gadimov" => 2000..2016;
-my @license-names = License::Software::.keys.sort.grep(* !~~ (<Year>|<Holder>|<Abstract>|/\&/));
+my @license-names = gather for License::Software::get-all() {
+    my $name = $_.^name;
+    require ::($name);
+    take ::($name).new().spdx;
+
+};
 my @spdx = [ <Glide>, <Abstyles>, <AFL-1.1>, <AFL-1.2>, <AFL-2.0>, <AFL-2.1>,
             <AFL-3.0>, <AMPAS>, <APL-1.0>, <Adobe-Glyph>, <APAFML>,
             <Adobe-2006>, <AGPL-1.0>, <Afmparse>, <Aladdin>, <ADSL>, <AMDPLPA>,
@@ -74,7 +79,7 @@ my @spdx = [ <Glide>, <Abstyles>, <AFL-1.1>, <AFL-1.2>, <AFL-2.0>, <AFL-2.1>,
 
 plan @license-names.elems;
 for @license-names -> $name {
-    my $license = License::Software::get($name).new: $pair;
+    my $license = license($name).new: $pair;
     ok $license.spdx ∈ @spdx, "$name is valid SPDX id";
 }
 

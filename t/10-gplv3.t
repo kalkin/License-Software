@@ -5,7 +5,7 @@ use License::Software::Abstract;
 
 plan 10;
 
-ok my License::Software::Abstract $license = License::Software::get('gplv3').new: "Max Musterman";
+ok my License::Software::Abstract $license = license('gplv3').new: "Max Musterman";
 is $license.short-name(), 'GPLv3', 'Short license name';
 is $license.name(), 'The GNU General Public License, Version 3, 29 June 2007', 'Full license name';
 is $license.works-name(), 'This program', "Default program name should 'This program'";

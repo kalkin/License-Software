@@ -65,16 +65,16 @@ If your favorite license is missing please do a pull request.
 
 Return all supported licenses.
 
-=head2 License::Software::get
+=head2 license
 
-    sub get(Str:D $alias)
+    sub license(Str:D $alias)
 
 Return the software license class for the given alias. I.e alias for the General
 Public License 3 are 'GPLv3', 'GPL3' & 'GPL'.
 
-=head2 License::Software::from-url
+=head2 license-from-url
 
-    sub from-url(Str:D $url)
+    sub license-from-url(Str:D $url)
 
 Return the software license class for the given url. I.e
 L<http://www.apache.org/licenses/LICENSE-2.0> is the url for Apache2 license.
@@ -166,13 +166,13 @@ our sub get-all returns List {
     # ==> map *.^name.split('::')[*-1]
 }
 
-our sub get(Str:D $alias) returns License::Software::Abstract
+sub license(Str:D $alias) is export returns License::Software::Abstract
 {
     for get-all() -> $license { return $license if $alias.uc ∈ $license.aliases».uc }
     warn "Can not find license alias '$alias'";
 }
 
-our sub from-url(Str:D $url ) returns License::Software::Abstract
+sub license-from-url(Str:D $url ) is export returns License::Software::Abstract
 {
     for get-all() -> $license { return $license if $url ~~ $license.url }
     warn "Can not find license with url '$url'";
