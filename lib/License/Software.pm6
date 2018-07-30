@@ -1,13 +1,10 @@
 =NAME License::Software - provides templated software licenses
 
-unit module License::Software;
-use License::Software::Abstract;
-use License::Software::GPLv3;
-use License::Software::Apache2;
-use License::Software::AGPLv3;
-use License::Software::LGPLv3;
-use License::Software::Artistic2;
+use Pluggable;
 
+use License::Software::Abstract;
+
+unit module License::Software;
 
 =begin SYNOPSIS
 =begin code
@@ -162,7 +159,7 @@ Returns the license url.
 =end pod
 
 our sub get-all returns List {
-    return eager License::Software::.values.list ==> grep( {
+    return eager plugins('License', :plugins-namespace('Software')) ==> grep( {
         $_ ~~ License::Software::Abstract &&
         $_.^name !~~ 'License::Software::Abstract'
     })
