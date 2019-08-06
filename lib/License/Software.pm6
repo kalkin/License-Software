@@ -170,6 +170,7 @@ sub license(Str:D $alias) is export returns License::Software::Abstract
 {
     for get-all() -> $license { return $license if $alias.uc ∈ $license.aliases».uc }
     warn "Can not find license alias '$alias'";
+    return Nil
 }
 
 sub license-from-url(Str:D $url ) is export returns License::Software::Abstract
