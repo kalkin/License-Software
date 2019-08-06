@@ -668,7 +668,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 };
 
 has Str $.short-name = <AGPLv3>;
-has Str $.spdx = <AGPL-3.0>;
+has Str $.spdx = <AGPL-3.0-only>;
 has Str $.name = 'The GNU Affero General Public License, Version 3, 29 June 2007';
 submethod url { <https://www.gnu.org/licenses/agpl-3.0.txt> };
 submethod aliases { <AGPLv3>, <AGPL3>, <AGPL>, <AGPL-3.0> };
