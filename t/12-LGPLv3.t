@@ -8,7 +8,7 @@ plan 8;
 ok my License::Software::Abstract $license = license('lgplv3').new("Bahtiar kalkin- Gadimov");
 is $license.short-name(), 'LGPLv3', 'Short license name';
 is $license.name(), 'The GNU Lesser General Public License, Version 3, 29 June 2007', 'Full license name';
-is $license.aliases(), ['LGPLv3', 'LGPL3', 'LGPL', $license.spdx], 'License Aliases';
+is $license.aliases(), ['LGPLv3', 'LGPL3', 'LGPL', 'LGPL-3.0', $license.spdx], 'License Aliases';
 is $license.files().keys.sort, ['COPYING', 'COPYING.LESSER'], 'License files';
 
 ok my $gpl = license('gplv3').new("Bahtiar kalkin- Gadimov");

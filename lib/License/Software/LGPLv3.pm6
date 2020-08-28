@@ -5,9 +5,9 @@ unit class License::Software::LGPLv3 is License::Software::GPLv3;
 
 submethod url { <https://www.gnu.org/licenses/lgpl-3.0.txt> }
 has Str $.name = 'The GNU Lesser General Public License, Version 3, 29 June 2007';
-has Str $.spdx = <LGPL-3.0>;
+has Str $.spdx = <LGPL-3.0-only>;
 has Str $.short-name = <LGPLv3>;
-submethod aliases { <LGPLv3>, <LGPL3>, <LGPL>, <LGPL-3.0> };
+submethod aliases { <LGPLv3>, <LGPL3>, <LGPL>, <LGPL-3.0>, <LGPL-3.0-only>};
 has Str $.full-text = q{ GNU LESSER GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -183,7 +183,7 @@ qq:to/END/
 { "\nThis file is part of $.works-name\.\n"  if $.works-name !~~ 'This program'; }
 $.works-name is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
-the Free Software Foundation, either version 3 of the License.
+the Free Software Foundation version 3 of the License.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of

@@ -639,7 +639,7 @@ the "copyright" line and a pointer to where the full notice is found.
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
+    the Free Software Foundation version 3 of the License, or
     (at your option) any later version.
 
     This program is distributed in the hope that it will be useful,
@@ -668,10 +668,10 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 };
 
 has Str $.short-name = <AGPLv3>;
-has Str $.spdx = <AGPL-3.0>;
+has Str $.spdx = <AGPL-3.0-only>;
 has Str $.name = 'The GNU Affero General Public License, Version 3, 29 June 2007';
 submethod url { <https://www.gnu.org/licenses/agpl-3.0.txt> };
-submethod aliases { <AGPLv3>, <AGPL3>, <AGPL>, <AGPL-3.0> };
+submethod aliases { <AGPLv3>, <AGPL3>, <AGPL>, <AGPL-3.0>, <AGPL-3.0-only> };
 has %.files = 'COPYING' => $!full-text;
 
 method header returns Str:D {
@@ -680,7 +680,7 @@ qq:to/END/
 { "\nThis file is part of $.works-name\.\n"  if $.works-name !~~ 'This program';} 
 $.works-name is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License.
+the Free Software Foundation version 3 of the License.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of

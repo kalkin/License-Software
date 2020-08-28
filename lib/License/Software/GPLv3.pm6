@@ -645,7 +645,7 @@ the "copyright" line and a pointer to where the full notice is found.
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
+    the Free Software Foundation version 3 of the License, or
     (at your option) any later version.
 
     This program is distributed in the hope that it will be useful,
@@ -683,10 +683,10 @@ Public License instead of this License.  But first, please read
 <http://www.gnu.org/philosophy/why-not-lgpl.html>.};
 
 has Str $.short-name = <GPLv3>;
-has Str $.spdx = <GPL-3.0>;
+has Str $.spdx = <GPL-3.0-only>;
 has Str $.name = 'The GNU General Public License, Version 3, 29 June 2007';
 submethod url { <https://www.gnu.org/licenses/gpl-3.0.txt> }
-submethod aliases { <GPLv3>, <GPL3>, <GPL>, <GPL-3.0> };
+submethod aliases { <GPLv3>, <GPL3>, <GPL>, <GPL-3.0>, <GPL-3.0-only>};
 has %.files = 'COPYING' => $!full-text;
 
 method note() returns Str:D {
@@ -707,7 +707,7 @@ qq:to/END/
 { "\nThis file is part of $.works-name\.\n"  if $.works-name !~~ 'This program';}
 $.works-name is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License.
+the Free Software Foundation version 3 of the License.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
