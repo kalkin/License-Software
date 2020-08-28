@@ -158,6 +158,8 @@ Returns the license url.
 
 =end pod
 
+our @licenses = get-all();
+
 our sub get-all returns List {
     return eager plugins('License', :plugins-namespace('Software')) ==> grep( {
         $_ ~~ License::Software::Abstract &&
@@ -168,14 +170,14 @@ our sub get-all returns List {
 
 sub license(Str:D $alias) is export returns License::Software::Abstract
 {
-    for get-all() -> $license { return $license if $alias.uc ∈ $license.aliases».uc }
+    for @licenses -> $license { return $license if $alias.uc ∈ $license.aliases».uc }
     warn "Can not find license alias '$alias'";
     return Nil
 }
 
 sub license-from-url(Str:D $url ) is export returns License::Software::Abstract
 {
-    for get-all() -> $license { return $license if $url ~~ $license.url }
+    for @licenses -> $license { return $license if $url ~~ $license.url }
     warn "Can not find license with url '$url'";
 }
 =COPYRIGHT Copyright © 2016 Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
