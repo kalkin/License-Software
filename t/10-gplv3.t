@@ -1,5 +1,6 @@
 use v6;
 use Test;
+use lib <lib>;
 use License::Software;
 use License::Software::Abstract;
 
