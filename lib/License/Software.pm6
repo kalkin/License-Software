@@ -159,10 +159,10 @@ Returns the license url.
 =end pod
 
 our sub get-all returns List {
-    return eager plugins('License', :plugins-namespace('Software')) ==> grep( {
-        $_ ~~ License::Software::Abstract &&
-        $_.^name !~~ 'License::Software::Abstract'
-    })
+   return eager plugins('License', :plugins-namespace('Software')) ==> grep( {
+       $_ ~~ License::Software::Abstract &&
+       $_.^name !~~ 'License::Software::Abstract'
+   })
     # ==> map *.^name.split('::')[*-1]
 }
 
