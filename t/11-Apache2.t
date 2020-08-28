@@ -1,9 +1,10 @@
 use v6;
 use Test;
+use lib <lib>;
 use License::Software;
 use License::Software::Abstract;
 
-plan 13;
+plan 15;
 my License::Software::Abstract $license;
 my License::Software::Abstract $license-apache = license('apache');
 my $pair = "Bahtiar `kalkin-` Gadimov" => 2000..2016;
